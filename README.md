@@ -10,6 +10,13 @@ AI-powered content management platform for WordPress blogs, SEO optimization, ed
 
 Blog Manager is a full-stack web application that turns a prompt into a published WordPress article — with AI generation, SEO scoring, editorial calendar, and real Google Analytics + Search Console KPIs in a single dashboard.
 
+**Core workflow:**
+```
+Prompt → AI generation (multi-provider) → structured output validation
+→ local draft with SEO scoring → WordPress draft/schedule/publish
+→ editorial calendar → SEO performance tracking (GA4 + GSC)
+```
+
 ## Demo (soon)
 
 ![Demo](docs/demo.gif)
@@ -32,7 +39,7 @@ Connect an existing WordPress website through the REST API and retrieve categori
 
 Configure and manage AI providers for content generation workflows.
 
-![AI Provider Connection](docs/images/ai-provider-connexion.png)
+![AI Provider Connection](docs/images/ai-provider-connection.png)
 
 ### Article Dashboard
 
@@ -70,12 +77,6 @@ Connect social media platforms for future automated content distribution.
 
 ![Social Media Connection](docs/images/social-media-connection.png)
 
-**Core workflow:**
-```
-Prompt → AI generation (multi-provider) → structured output validation
-→ local draft with SEO scoring → WordPress draft/schedule/publish
-→ editorial calendar → SEO performance tracking (GA4 + GSC)
-```
 
 ---
 
