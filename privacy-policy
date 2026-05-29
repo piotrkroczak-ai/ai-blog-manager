@@ -1,0 +1,98 @@
+---
+
+# Privacy Policy
+
+Tu peux créer une page WordPress ou GitHub Pages avec ceci.
+
+## Privacy Policy
+
+```md
+# Privacy Policy
+
+Last updated: May 2026
+
+## Introduction
+
+AI Blog Manager is an AI-powered content management platform currently under development.
+
+This Privacy Policy explains how information may be collected, stored and processed when using the platform.
+
+---
+
+## Information We Collect
+
+Depending on the features used, the platform may collect:
+
+- Account information
+- Email address
+- Connected WordPress website information
+- API credentials provided by users
+- Content generated through connected AI providers
+- Editorial planning information
+
+---
+
+## Third-Party Services
+
+AI Blog Manager may connect to third-party services including:
+
+- WordPress
+- OpenAI
+- Anthropic
+- LinkedIn
+- Google Analytics
+- Google Search Console
+
+Users are responsible for reviewing the privacy policies of these services.
+
+---
+
+## Data Storage
+
+Credentials and configuration settings are stored securely.
+
+Sensitive information such as API keys should never be exposed publicly.
+
+Reasonable measures are implemented to protect stored information.
+
+---
+
+## Data Usage
+
+Collected information is used solely to:
+
+- Authenticate users
+- Connect external services
+- Generate content
+- Publish content
+- Provide analytics and reporting
+
+AI Blog Manager does not sell personal information to third parties.
+
+---
+
+## Data Deletion
+
+Users may request deletion of their account and associated data at any time.
+
+---
+
+## Contact
+
+For questions regarding this Privacy Policy:
+
+Piotr Kroczak
+
+GitHub:
+https://github.com/piotrkroczak-ai
+
+Email:
+kroczak.piotr@gmail.com
+
+---
+
+## Changes
+
+This Privacy Policy may be updated periodically as the project evolves.
+
+Continued use of the platform constitutes acceptance of future updates.
