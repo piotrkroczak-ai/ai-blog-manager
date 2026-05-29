@@ -14,16 +14,61 @@ Blog Manager is a full-stack web application that turns a prompt into a publishe
 
 ![Demo](docs/demo.gif)
 
-## Screenshots (soon)
+## Screenshots
 
 ### Dashboard
+
+Centralized overview of connected blogs, AI providers, content workflows and publishing activity.
+
 ![Dashboard](docs/images/dashboard.png)
 
 ### WordPress Connection
-![WordPress Connection](docs/images/wordpress-connexion.png)
 
-### Articles Management
-![Articles](docs/images/article dashboard.png)
+Connect an existing WordPress website through the REST API and retrieve categories, articles and site metadata.
+
+![WordPress Connection](docs/images/wordpress-connection.png)
+
+### AI Provider Configuration
+
+Configure and manage AI providers for content generation workflows.
+
+![AI Provider Connection](docs/images/ai-provider-connexion.png)
+
+### Article Dashboard
+
+Manage articles, publication status and content lifecycle from a single interface.
+
+![Article Dashboard](docs/images/article-dashboard.png)
+
+### Article Creation
+
+Generate and prepare content for publication using AI-assisted workflows.
+
+![Article Creation](docs/images/article-creation.png)
+
+### Editorial Planning
+
+Plan and organize future publications through a dedicated content calendar.
+
+![Article Planner](docs/images/article-planner.png)
+
+### SEO Optimization
+
+Review and optimize content using integrated SEO recommendations and scoring.
+
+![SEO Optimization](docs/images/seo-optimization.png)
+
+### SEO Article Optimization
+
+Improve existing content before publication.
+
+![SEO Article Optimize](docs/images/seo-article-optimize.png)
+
+### Social Media Connections
+
+Connect social media platforms for future automated content distribution.
+
+![Social Media Connection](docs/images/social-media-connection.png)
 
 **Core workflow:**
 ```
