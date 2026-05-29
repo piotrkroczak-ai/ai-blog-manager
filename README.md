@@ -20,10 +20,10 @@ Blog Manager is a full-stack web application that turns a prompt into a publishe
 ![Dashboard](docs/images/dashboard.png)
 
 ### WordPress Connection
-![WordPress Connection](docs/images/wordpress-connection.png)
+![WordPress Connection](docs/images/wordpress-connexion.png)
 
 ### Articles Management
-![Articles](docs/images/articles.png)
+![Articles](docs/images/article dashboard.png)
 
 **Core workflow:**
 ```
