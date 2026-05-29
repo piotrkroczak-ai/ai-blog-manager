@@ -17,8 +17,8 @@ Prompt → AI generation (multi-provider) → structured output validation
 → editorial calendar → SEO performance tracking (GA4 + GSC)
 ```
 
-## Demo (soon)
-
+## Demo 
+🚧 Demo video currently in preparation.
 ![Demo](docs/demo.gif)
 
 ## Screenshots
