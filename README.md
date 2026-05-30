@@ -18,8 +18,10 @@ Prompt → AI generation (multi-provider) → structured output validation
 ```
 
 ## Demo 
-🚧 Demo video currently in preparation.
-![Demo](docs/demo.gif)
+
+[![Watch the demo](https://img.youtube.com/vi/jW7yww5LIqs/maxresdefault.jpg)](https://youtu.be/jW7yww5LIqs)
+
+Watch the demo on YouTube: https://youtu.be/jW7yww5LIqs
 
 ## Screenshots
 
