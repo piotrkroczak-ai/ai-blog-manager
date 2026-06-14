@@ -1,8 +1,10 @@
 # AI Blog Manager — AI-Assisted Content Production Dashboard
-AI-powered content management platform for WordPress blogs, SEO optimization, editorial planning and automated publishing workflows.
+AI-powered content management platform for WordPress blogs: SEO optimization, editorial planning, social distribution and automated publishing workflows.
 
-> **Status:** Active development — V1.3 shipped, V1.4 (social distribution) in progress.
-> Private repository. This document is intended for recruiters and technical reviewers.
+> **Status:** 🟢 **Live in production — private beta (invite-only), now opening to first testers.**
+> **Live demo:** https://blog-manager-blush.vercel.app
+>
+> Public showcase repository for recruiters and technical reviewers. The application source code is kept in a separate private repository — this page documents the architecture, decisions and engineering methodology behind the project.
 
 ---
 
@@ -14,8 +16,25 @@ Blog Manager is a full-stack web application that turns a prompt into a publishe
 ```
 Prompt → AI generation (multi-provider) → structured output validation
 → local draft with SEO scoring → WordPress draft/schedule/publish
-→ editorial calendar → SEO performance tracking (GA4 + GSC)
+→ editorial calendar → social distribution (LinkedIn) → SEO tracking (GA4 + GSC)
 ```
+
+---
+
+## Live & deployed
+
+The application is deployed and running in production:
+
+| Aspect | Setup |
+|--------|-------|
+| **Application** | Next.js (UI + API routes + server actions) on **Vercel** (Production + automatic preview per branch) |
+| **Database** | **PostgreSQL on Railway** (managed, isolated prod/dev instances) |
+| **Migrations** | Applied automatically at build (`prisma migrate deploy`) — code and schema ship in one pipeline |
+| **Scheduled publishing** | **Vercel Cron** triggers a secret-protected endpoint — stateless, serverless-safe (no in-memory timers) |
+| **Secrets** | Environment-scoped (Production / Preview), never in source or Git |
+| **Access** | Invite-only registration + public waitlist (Cloudflare Turnstile anti-spam) |
+
+Branch workflow: `feature/*` → Vercel preview → review → merge to `main` → production build → version tag (`v1.0.0`, `v1.1.0`, `v1.2.0`).
 
 ## Demo 
 
@@ -88,7 +107,7 @@ Connect social media platforms for future automated content distribution.
 |-------|--------|-----|
 | Framework | Next.js 16 App Router | Server Actions, RSC, Edge-compatible auth |
 | Language | TypeScript (strict) | Full type safety across client + server |
-| Database | Prisma v5 + SQLite → PostgreSQL | Zero-setup local dev, clean migration path |
+| Database | Prisma v5 + PostgreSQL (Railway) | Relational integrity, serverless-ready, clean migrations |
 | Auth | Auth.js v5 (JWT strategy) | Edge-compatible middleware, credentials + OAuth |
 | UI | Tailwind CSS + shadcn/ui v4 | Accessible component primitives |
 | Calendar | FullCalendar | Event grouping, drag-and-drop scheduling |
@@ -165,32 +184,32 @@ This makes adding a new KPI a one-line addition to the catalog, with no changes 
 - No secret ever passed to an AI model
 - Audit log on every WordPress write action
 - AES-256-GCM encryption for all user credentials
-- Register endpoint protected; production deployment requires invite or closure
+- Invite-only registration in production; public waitlist protected by Cloudflare Turnstile + honeypot
 
 ---
 
-## Current feature set (V1.3)
+## Feature set (in production)
 
 - **Multi-provider article generation** — structured output, 500-word floor enforcement, JSON repair fallback
-- **Article rework** — AI-powered revision of existing drafts, preserving original
+- **Article rework & refresh** — AI revision of drafts and re-optimization of published articles (diff review before republish)
 - **WordPress integration** — draft creation, scheduling, publishing with Yoast SEO field forwarding
-- **Editorial calendar** — color-coded by status (draft / scheduled / published / refresh / WP draft)
+- **Editorial calendar** — color-coded by status, drag-and-drop rescheduling
 - **SEO scoring** — real-time keyphrase analysis, meta checks, structure scoring
-- **Article refresh** — fetch published WP articles, AI-generate SEO improvement, diff review, republish
-- **GA4 + Search Console** — OAuth2, real KPI data (clicks, impressions, CTR, position, sessions, engagement rate)
-- **KPI dashboard** — 14 selectable metrics, period selector (24h / 7d / 30d / 3m), per-site preferences
+- **GA4 + Search Console** — OAuth2, real KPI data (clicks, impressions, CTR, position, sessions, engagement)
+- **Social distribution** — LinkedIn post generation + scheduled publishing via Vercel Cron
+- **Admin & access** — invite-only registration, admin panel (invite codes, feedback inbox, global stats), public waitlist
 
 ---
 
 ## Roadmap
 
-### V1.4 — Social distribution (in progress)
-OAuth connections + AI-generated posts per platform, ordered by API complexity:
-1. LinkedIn (OAuth 2.0, `w_member_social`)
-2. Pinterest (OAuth 2.0, boards API)
-3. Meta — Facebook Page + Instagram Business (Graph API, page tokens)
+### Responsive / mobile
+Mobile-first navigation and touch-friendly layouts (top-bar menu, adapted tables and calendar), desktop preserved.
 
-### V1.8 — AI Engineering layer
+### Additional social channels
+Pinterest (boards API) and Meta — Facebook Page + Instagram Business (Graph API). LinkedIn already shipped.
+
+### AI Engineering layer
 
 Three features that move the project from "AI wrapper" to "AI-native application":
 
@@ -303,6 +322,6 @@ Phases are broken into sub-parts (e.g. V1.3-A → V1.3-B → V1.3-C → V1.3-D) 
 
 ---
 
-*Built with Next.js 16 · TypeScript · Prisma · Auth.js v5 · OpenAI / Anthropic / Mistral · Google APIs · Meta Graph API*
+*Built with Next.js 16 · TypeScript · Prisma · PostgreSQL · Auth.js v5 · OpenAI / Anthropic / Mistral · Google APIs · LinkedIn API · deployed on Vercel + Railway*
 *Developed using Claude Code + OpenAI Codex CLI in a structured multi-agent workflow.*
 
